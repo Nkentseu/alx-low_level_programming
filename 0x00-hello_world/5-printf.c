@@ -3,7 +3,7 @@
 
 /**
  * main - printf
- * Description: print the message in standar output
+ * Description: print the message in standar output flow
  * Return: 0
  */
 int main(void)
