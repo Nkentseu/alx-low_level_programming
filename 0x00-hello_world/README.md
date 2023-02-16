@@ -15,7 +15,7 @@ General
 	* How to find the right header to include in your source code when using a standard library function
 	* How does the main function influence the return value of the program
 
-## [0. Preprocessor](0-preprocessor.c "preprocessor")
+## [0. Preprocessor](0-preprocessor "preprocessor")
 Write a script that runs a C file through the preprocessor and save the result into another file.
 
 * The C file name will be saved in the variable $CFILE
@@ -46,3 +46,11 @@ Write a script that runs a C file through the preprocessor and save the result i
 	 return (0);
 	}
 	julien@ubuntu:~/c/0x00$ 
+
+## [1. Compiler](1-compiler "compile")
+
+Write a script that compiles a C file but does not link.
+
+* The C file name will be saved in the variable $CFILE
+* The output file should be named the same as the C file, but with the extension .o instead of .c.
+
