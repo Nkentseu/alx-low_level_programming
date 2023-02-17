@@ -18,7 +18,7 @@ int main(void)
 		{
 			if ((second / 10) + (second % 10) * 10 < first)
 				continue;
-			if (first != 0 || second != 99)
+			if (first != 0 || second != 1)
 				putchar(' ');
 			putchar('0' + (first / 10));
 			putchar('0' + (first % 10));
