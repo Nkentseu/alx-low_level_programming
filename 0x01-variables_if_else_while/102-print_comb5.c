@@ -16,6 +16,8 @@ int main(void)
 	{
 		for (second = first + 1; second < 100; second++)
 		{
+			if ((second / 10) + (second % 10) * 10 < first)
+				continue;
 			if (first != 0 || second != 99)
 				putchar(' ');
 			putchar('0' + (first / 10));
