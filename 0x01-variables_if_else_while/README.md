@@ -1,5 +1,6 @@
 # 0x01. C - Variables, if, else, while
 General
+
         * What are the arithmetic operators and how to use them
         * What are the logical operators (sometimes called boolean operators) and how to use them
         * What the the relational operators and how to use them
@@ -27,4 +28,4 @@ This program will assign a random number to the variable n each time it is execu
 		* if the number is greater than 0: is positive
 		* if the number is 0: is zero
 		* if the number is less than 0: is negative
-	* followed by a new line
+followed by a new line
