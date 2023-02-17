@@ -2,6 +2,7 @@
 
 ## [0x00. C - Hello, World](0x00-hello_world "low c")
 General
+
 	* Why C programming is awesome
 	* Who invented C
 	* Who are Dennis Ritchie, Brian Kernighan and Linus Torvalds
@@ -18,6 +19,7 @@ General
 
 ## [0x01. C - Variables, if, else, while](0x01-variables_if_else_while "test")
 General
+
 	* What are the arithmetic operators and how to use them
 	* What are the logical operators (sometimes called boolean operators) and how to use them
 	* What the the relational operators and how to use them
