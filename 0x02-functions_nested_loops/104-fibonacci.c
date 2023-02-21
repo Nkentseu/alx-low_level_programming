@@ -6,9 +6,9 @@
  */
 int main(void)
 {
-	float un = 1;
-	float un_p1 = un;
-	float un_m1 = 0;
+	double un = 1;
+	double un_p1 = un;
+	double un_m1 = 0;
 	unsigned long n = 1;
 
 	while (n <= 98)
