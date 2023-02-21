@@ -11,7 +11,6 @@ int main(void)
 	unsigned long un_m1 = 0;
 	unsigned long n = 1;
 
-	printf("%ld, ", un_p1);
 	while (n <= 50)
 	{
 		un_p1 = un + un_m1;
