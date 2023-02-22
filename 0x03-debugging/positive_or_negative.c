@@ -2,6 +2,7 @@
 
 /**
  * positive_or_negative - positive number
+ * @i: number
  * Return: void
  */
 void positive_or_negative(int i)
