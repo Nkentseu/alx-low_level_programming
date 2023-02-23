@@ -13,9 +13,9 @@ int main(void)
 
 	i = 0;
 	/*The variable i is not increment*/
-	while (i < 10)
+	while (i < 10) /*The variable i is not increment*/
 	{
-		putchar(i);
+		putchar(i); /*The variable i is not increment*/
 	}
 
 	printf("Infinite loop avoided! \\o/\n");
