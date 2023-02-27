@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * _atoi - convert str to in
@@ -20,8 +21,14 @@ int _atoi(char *s)
 			signe *= -1;
 		if ('0' <= s[index] && s[index] <= '9')
 		{
-			number = (number * 10) + (int)(s[index] - '0');
 			entier = 1;
+			if ((number * 10) + (int)(s[index] - '0') >= INT_MAX)
+			{
+				if (signe == -1)
+					return (INT_MIN);
+				return (INT_MAX);
+			}
+			number = (number * 10) + (int)(s[index] - '0');
 		}
 		else if (s[index] != ' ' && s[index] != '-' && s[index] != '+')
 		{
@@ -30,5 +37,5 @@ int _atoi(char *s)
 		}
 		index++;
 	}
-	return (signe * number);
+	return (number * signe);
 }
