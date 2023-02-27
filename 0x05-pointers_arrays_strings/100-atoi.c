@@ -8,7 +8,7 @@
  */
 int _atoi(char *s)
 {
-	int number = 0;
+	unsigned int number = 0;
 	int index = 0;
 	int entier = 0;
 	int signe = 1;
@@ -17,12 +17,11 @@ int _atoi(char *s)
 		return (0);
 	while (s[index])
 	{
-		if (s[index] == '-')
-			signe *= -1;
+		signe *= (s[index] == '-') ? -1 : 1;
 		if ('0' <= s[index] && s[index] <= '9')
 		{
 			entier = 1;
-			if ((number * 10) + (int)(s[index] - '0') >= INT_MAX)
+			if ((number * 10) + (s[index] - '0') >= INT_MAX)
 			{
 				if (signe == -1)
 					return (INT_MIN);
