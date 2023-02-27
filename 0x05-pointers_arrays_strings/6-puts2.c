@@ -16,7 +16,10 @@ void puts2(char *str)
 		while (tmp[0])
 		{
 			write(1, &tmp[0], 1);
-			tmp = tmp + 2;
+			tmp++;
+			if (!tmp[0] || tmp[0] == '\0')
+				break;
+			tmp++;
 		}
 	}
 	write(1, &end, 1);
