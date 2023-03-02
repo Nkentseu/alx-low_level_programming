@@ -39,11 +39,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	{
 		if (size_r <= maximum + 1)
 			return (0);
-		else
-		{
-			r[maximum] = '0' + retenu;
-			r[maximum + 1] = '\0';
-		}
+		r[maximum] = '0' + retenu;
+		r[maximum + 1] = '\0';
 	}
 	else
 		maximum--;
