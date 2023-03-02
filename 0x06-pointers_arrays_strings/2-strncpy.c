@@ -10,7 +10,6 @@
 char *_strncpy(char *dest, char *src, int n)
 {
 	int i = 0;
-	int atteint = 0;
 
 	if (dest == 0 || src == 0 || n <= 0)
 		return ("");
@@ -18,10 +17,11 @@ char *_strncpy(char *dest, char *src, int n)
 	{
 		dest[i] = src[i];
 		i++;
-		if (src[i] == '\0')
-			atteint = 1;
 	}
-	if (atteint == 1)
+	while (i < n)
+	{
 		dest[i] = '\0';
+		i++;
+	}
 	return (dest);
 }
