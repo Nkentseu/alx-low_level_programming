@@ -102,3 +102,16 @@ Add one line to [this code](https://github.com/holbertonschool/make_magic_happen
 * and don’t change anything but the line of code you are adding (don’t change the spaces to tabs!)
 * You are allowed to use the standard library
 
+## [11. It is the addition of strangeness to beauty that constitutes the romantic character in art](103-infinite_add.c "add")
+Write a function that adds two numbers.
+
+* Prototype: char *infinite_add(char *n1, char *n2, char *r, int size_r);
+* Where n1 and n2 are the two numbers
+* r is the buffer that the function will use to store the result
+* size_r is the buffer size
+* The function returns a pointer to the result
+* You can assume that you will always get positive numbers, or 0
+* You can assume that there will be only digits in the strings n1 and n2
+* n1 and n2 will never be empty
+* If the result can not be stored in r the function must return 0
+
