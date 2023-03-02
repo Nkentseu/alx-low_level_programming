@@ -49,8 +49,6 @@ void print_char(char *b, int begin, int size)
 			else
 				printf(".");
 		}
-		else
-			printf(" ");
 		if (position + 1 < size)
 		{
 			if (b[position + 1] >= 32 && b[position + 1] <= 126)
@@ -58,8 +56,6 @@ void print_char(char *b, int begin, int size)
 			else
 				printf(".");
 		}
-		else
-			printf(" ");
 	}
 }
 
