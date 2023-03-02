@@ -76,9 +76,7 @@ void print_buffer(char *b, int size)
 
 	for (i = 0; i < count; i++)
 	{
-		long x = (long) &b[i * 10];
-
-		printf("%lx:", x);
+		printf("%08x:", i * 10);
 		print_hexa(b, i * 10, size);
 		printf(" ");
 		print_char(b, i * 10, size);
