@@ -7,22 +7,19 @@
  */
 char *leet(char *str)
 {
-	char minus[] = "aeotl";
-	char majus[] = "AEOTL";
+	char letters[] = "aeotlAEOTL";
 	char correspondance[] = "43071";
 	int i = 0;
 
-	if (str == 0)
-		return (0);
 	while (str[i] != '\0')
 	{
 		int j = 0;
 
-		while (minus[j] != '\0')
+		while (letters[j] != '\0')
 		{
-			if (minus[j] == str[i] || majus[j] == str[i])
+			if (letters[j] == str[i])
 			{
-				str[i] = correspondance[j];
+				str[i] = correspondance[j % 5];
 				break;
 			}
 			j++;
