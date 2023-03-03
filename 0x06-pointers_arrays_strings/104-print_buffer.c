@@ -70,7 +70,10 @@ void print_buffer(char *b, int size)
 	int count = (size % 10 == 0) ? size / 10 : 1 + (size / 10);
 
 	if (size <= 0)
+	{
+		printf("\n");
 		return;
+	}
 	for (i = 0; i < count; i++)
 	{
 		printf("%08x:", i * 10);
