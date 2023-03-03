@@ -37,24 +37,23 @@ void print_hexa(char *b, int begin, int size)
 void print_char(char *b, int begin, int size)
 {
 	int j = 0;
+	int i = 0;
 
 	for (j = 0; j < 5; j++)
 	{
 		int position = begin + (j * 2);
 
-		if (position < size)
+		for (i = 0; i < 2; i++)
 		{
-			if (b[position] >= 32 && b[position] <= 126)
-				printf("%c", b[position]);
+			if (position + i < size)
+			{
+				if (b[position + i] >= 32 && b[position + i] <= 126)
+					printf("%c", b[position + i]);
+				else
+					printf(".");
+			}
 			else
-				printf(".");
-		}
-		if (position + 1 < size)
-		{
-			if (b[position + 1] >= 32 && b[position + 1] <= 126)
-				printf("%c", b[position + 1]);
-			else
-				printf(".");
+				break;
 		}
 	}
 }
@@ -70,6 +69,8 @@ void print_buffer(char *b, int size)
 	int i = 0;
 	int count = (size % 10 == 0) ? size / 10 : 1 + (size / 10);
 
+	if (size <= 0)
+		return;
 	for (i = 0; i < count; i++)
 	{
 		printf("%08x:", i * 10);
