@@ -6,17 +6,18 @@
  */
 int main(void)
 {
-	unsigned long un = 1;
-	unsigned long un_p1 = un;
-	unsigned long un_m1 = 0;
-	unsigned long n = 1;
+	unsigned long n = 2;
+	unsigned long Fn_1 = 1;
+	unsigned long Fn_2 = 0;
+	unsigned long Fn = 1;
 
 	while (n <= 50)
 	{
-		un_p1 = un + un_m1;
-		un_m1 = un;
-		un = un_p1;
-		printf("%ld", un_p1);
+		Fn = Fn_1 + Fn_2;
+		Fn_2 = Fn_1;
+		Fn_1 = Fn;
+
+		printf("%ld", Fn);
 		if (n < 50)
 			printf(", ");
 		n++;

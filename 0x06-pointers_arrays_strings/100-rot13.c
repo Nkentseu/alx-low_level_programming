@@ -7,19 +7,19 @@
  */
 char *rot13(char *str)
 {
-	char fonc[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char invfonc[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	int i = 0;
 
 	while (str[i] != '\0')
 	{
 		int j = 0;
 
-		while (fonc[j] != '\0')
+		while (input[j] != '\0')
 		{
-			if (fonc[j] == str[i])
+			if (input[j] == str[i])
 			{
-				str[i] = invfonc[j];
+				str[i] = output[j];
 				break;
 			}
 			j++;
