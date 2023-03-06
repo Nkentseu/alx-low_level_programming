@@ -26,7 +26,7 @@ char *_strstr(char *haystack, char *needle)
 	if (s2 == 0 && s1 != 0)
 		return (haystack);
 
-	if (s1 == 0 && s2 == 0 || s1 < s2)
+	if (s1 == 0 || s2 == 0 || s1 < s2)
 		return (0);
 
 	for (i = 0; i < s1; i++)
