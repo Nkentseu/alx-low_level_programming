@@ -89,3 +89,11 @@ General
 	* What are multidimensional arrays and how to use them
 	* What are the most common C standard library functions to manipulate strings
 
+## [0x08. C - Recursion](0x08-recursion "recursion")
+General
+
+	* What is recursion
+	* How to implement recursion
+	* In what situations you should implement recursion
+	* In what situations you shouldn’t implement recursion
+
