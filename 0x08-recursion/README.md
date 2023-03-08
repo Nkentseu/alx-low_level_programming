@@ -44,3 +44,8 @@ Write a function that returns the natural square root of a number.
 * If n does not have a natural square root, the function should return -1
 FYI: The standard library provides a different function: sqrt. Run man sqrt to learn more.
 
+## [6. Inception. Is it possible?](6-is_prime_number.c "prime")
+Write a function that returns 1 if the input integer is a prime number, otherwise return 0.
+
+* Prototype: int is_prime_number(int n);
+
