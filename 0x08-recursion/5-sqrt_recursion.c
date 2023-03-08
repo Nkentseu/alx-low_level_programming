@@ -1,16 +1,29 @@
 #include "main.h"
-#include <math.h>
 
 /**
+ * raccourcis - rac
+ * @n: number
+ * @p: sqrt
+ * Return: p or -1
+ */
+int raccourcis(int n, int p)
+{
+	if (p > n / 2)
+		return (-1);
+	return ((p * p == n) ? p : raccourcis(n, p + 1));
+}
+/**
+ * _sqrt_recursion - sqrt
+ * @n: number
+ * Return: square root of n
  */
 int _sqrt_recursion(int n)
 {
-	float s = 0;
-
 	if (n < 0)
 		return (-1);
-	s = sqrt(n);
-	if (s - (int)s < 1)
-		return (-1);
-	return ((int) s);
+	if (n == 0)
+		return (0);
+	if (n == 1)
+		return (1);
+	return (raccourcis(n, 1));
 }
