@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Vérifie que le nom du dossier où se trouvent les fichiers source et la bibliothèque à créer est spécifié
+if [ $# -eq 0 ]
+  then
+    echo "Veuillez spécifier le nom du dossier où se trouvent les fichiers source et la bibliothèque à créer"
+    exit 1
+fi
+
+DIR=$1
+
+# Vérifie que l'utilisateur a spécifié un nom personnalisé pour la bibliothèque
+if [ $# -eq 1 ]
+  then
+    echo "Veuillez spécifier un nom personnalisé pour la bibliothèque à créer"
+    exit 1
+fi
+
+LIBNAME=$2
+
+# Compile tous les fichiers .c présents dans le dossier spécifié
+gcc -c $DIR/*.c
+
+# Crée la bibliothèque statique à partir des fichiers objets générés
+ar rcs $DIR/lib$LIBNAME.a *.o
+
+# Met à jour l'index de la bibliothèque
+ranlib $DIR/lib$LIBNAME.a
+
+# Supprime les fichiers objets générés
+rm *.o
+
+echo "La bibliothèque statique $LIBNAME.a a été créée avec succès"
+
