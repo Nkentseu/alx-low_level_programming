@@ -2,6 +2,46 @@
 #include <stdlib.h>
 
 /**
+ * alloc_init - allocated and initialise
+ * @size: size of value
+ * @init: init value
+ * Return: null or pointer to array
+ */
+int *alloc_init(int size, int init)
+{
+	int *array = 0;
+	int i = 0;
+
+	if (size <= 0)
+		return (0);
+	array = (int *)malloc(sizeof(int) * size);
+	if (array == 0)
+		return (0);
+	for (i = 0; i < size; i++)
+		array[i] = init;
+	return (array);
+}
+
+/**
+ * free_last - free last element
+ * @aarray: the array of array
+ * @b: begin
+ * @e: end
+ * Return: void
+ */
+void free_last(int **aarray, int b, int e)
+{
+	int i = 0;
+
+	if (e < b)
+		return;
+	for (i = b; i < e + 1; i++)
+	{
+		free(aarray[i]);
+		aarray[i] = 0;
+	}
+}
+/**
  * alloc_grid - allocated the 2d array
  * @width: width of array
  * @height: height of array
@@ -19,20 +59,12 @@ int **alloc_grid(int width, int height)
 		return (0);
 	for (i = 0; i < width; i++)
 	{
-		int *ligne = (int *)malloc(sizeof(int) * height);
-		int k = 0;
-
-		if (ligne == 0)
+		output[i] = alloc_init(height, 0);
+		if (output[i] == 0)
 		{
-			int j = 0;
-
-			for (j = 0; j < i; j++)
-				free(output[j]);
+			free_last(output, 0, i - 1);
 			return (0);
 		}
-		for (k = 0; k < height; k++)
-			ligne[k] = 0;
-		output[i] = ligne;
 	}
 	return (output);
 }
