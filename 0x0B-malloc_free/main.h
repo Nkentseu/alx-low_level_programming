@@ -77,5 +77,6 @@ int is_palindrome(char *s);
 int wildcmp(char *s1, char *s2);
 
 char *create_array(unsigned int size, char c);
+char *_strdup(char *str);
 
 #endif /* !MAIN_H */
