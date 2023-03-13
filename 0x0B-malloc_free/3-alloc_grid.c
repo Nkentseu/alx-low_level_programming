@@ -20,18 +20,18 @@ int **alloc_grid(int width, int height)
 	for (i = 0; i < width; i++)
 	{
 		int *ligne = (int *)malloc(sizeof(int) * height);
+		int k = 0;
 
 		if (ligne == 0)
 		{
 			int j = 0;
 
 			for (j = 0; j < i; j++)
-			{
 				free(output[j]);
-				ligne = 0;
-			}
 			return (0);
 		}
+		for (k = 0; k < height; k++)
+			ligne[k] = 0;
 		output[i] = ligne;
 	}
 	return (output);
