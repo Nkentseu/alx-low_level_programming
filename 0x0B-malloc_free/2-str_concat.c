@@ -24,7 +24,7 @@ char *str_concat(char *s1, char *s2)
 	unsigned int i = 0;
 	char *strc = 0;
 
-	if (l1 == 0 && l2 == 0)
+	if (s1 == 0 && s2 == 0)
 		return (0);
 	strc = (char *)malloc(sizeof(char) * (l1 + l2 + 1));
 	if (strc == 0)
