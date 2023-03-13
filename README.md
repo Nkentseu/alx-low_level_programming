@@ -110,3 +110,11 @@ General
 	* What is a static library, how does it work, how to create one, and how to use it
 	* Basic usage of ar, ranlib, nm
 
+## [0x0B-malloc_free](0x0B-malloc_free "allocation")
+General
+
+	* What is the difference between automatic and dynamic allocation
+	* What is malloc and free and how to use them
+	* Why and when use malloc
+	* How to use valgrind to check for memory leak
+
