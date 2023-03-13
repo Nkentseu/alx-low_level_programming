@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * alloc_init - allocated and initialise
@@ -54,12 +55,12 @@ int **alloc_grid(int width, int height)
 
 	if (width <= 0 || height <= 0)
 		return (0);
-	output = (int **)malloc(sizeof(int *) * width);
+	output = (int **)malloc(sizeof(int *) * height);
 	if (output == 0)
 		return (0);
-	for (i = 0; i < width; i++)
+	for (i = 0; i < height; i++)
 	{
-		output[i] = alloc_init(height, 0);
+		output[i] = alloc_init(width, 0);
 		if (output[i] == 0)
 		{
 			free_last(output, 0, i - 1);
