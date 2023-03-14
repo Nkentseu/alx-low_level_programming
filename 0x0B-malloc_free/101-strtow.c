@@ -100,7 +100,7 @@ char **strtow(char *str)
 
 		while (str[debut + p] != '\0' && str[debut + p] == ' ')
 			p++;
-		if (p == 0)
+		if (p == 0 && debut != 0)
 			break;
 		debut = debut + p;
 		p = 0;
