@@ -63,7 +63,8 @@ int **alloc_grid(int width, int height)
 		output[i] = alloc_init(width, 0);
 		if (output[i] == 0)
 		{
-			free_last(output, 0, i);
+			free_last(output, 0, i - 1);
+			free(output);
 			return (0);
 		}
 	}
