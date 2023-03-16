@@ -118,3 +118,9 @@ General
 	* Why and when use malloc
 	* How to use valgrind to check for memory leak
 
+## [0x0C. C - More malloc, free](0x0C-more_malloc_free "malloc")
+General
+
+	* How to use the exit function
+	* What are the functions calloc and realloc from the standard library and how to use them
+
