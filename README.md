@@ -131,3 +131,9 @@ General
 	* What are the most common predefined macros
 	* How to include guard your header files
 
+## [0x0E. C - Structures, typedef](0x0E-structures_typedef "0x0E-structures_typedef")
+General
+
+	* What are structures, when, why and how to use them
+	* How to use typedef
+
