@@ -24,7 +24,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	int ln = leng(name);
 	int so = leng(owner);
-	struct dog *d = (struct dog *)malloc(sizeof(struct dog));
+	dog_t *d = (dog_t *)malloc(sizeof(dog_t));
 	int max_ = (ln < so) ? so : ln;
 	int i = 0;
 
@@ -51,5 +51,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		if (i < so)
 			d->owner[i] = owner[i];
 	}
+	d->name[ln] = '\0';
+	d->owner[so] = '\0';
 	return (d);
 }
