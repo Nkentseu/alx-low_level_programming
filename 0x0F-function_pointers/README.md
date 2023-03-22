@@ -83,7 +83,7 @@ This file should contain your main function only.
 * You are allowed to use a maximum of 3 if statements
 
 ## [4. Most hackers are young because young people tend to be adaptable. As long as you remain adaptable, you can always be a good hacker](100-main_opcodes.c "opcode")
-Write a program that prints the opcodes of its own main function.
+Write a program that prints the [opcodes](https://intranet.alxswe.com/rltoken/5eSu8Ohx0ddeNGmaeDo_zQ "opcodes") of its own main function.
 
 * Usage: ./main number_of_bytes
 * Output format:
@@ -96,5 +96,5 @@ Write a program that prints the opcodes of its own main function.
 * If the number of argument is not the correct one, print Error, followed by a new line, and exit with the status 1
 * If the number of bytes is negative, print Error, followed by a new line, and exit with the status 2
 * You do not have to compile with any flags
-Note: if you want to translate your opcodes to assembly instructions, you can use, for instance udcli.
+Note: if you want to translate your opcodes to assembly instructions, you can use, for instance [udcli](https://intranet.alxswe.com/rltoken/jUyzrqbp0AUZBdiTKdVExA "udcli").
 
