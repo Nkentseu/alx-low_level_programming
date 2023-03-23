@@ -8,26 +8,32 @@
  */
 void print_all(const char * const format, ...)
 {
-	const char *ptr = format;
 	va_list args;
 	char c;
 	int i;
 	float f;
 	char *s;
+	unsigned long id = 0;
+	int p = 0;
 	
-	while (*ptr) {
-		switch (*ptr) {
+	va_start(args, format);
+	while (format != 0 && format[id] != '\0') {
+		p = 0;
+		switch (format[id]) {
 			case 'c':
 				c = va_arg(args, int);
 				printf("%c", c);
+				p = 1;
 				break;
 			case 'i':
 				i = va_arg(args, int);
 				printf("%d", i);
+				p = 1;
 				break;
 			case 'f':
 				f = (float) va_arg(args, double);
 				printf("%f", f);
+				p = 1;
 				break;
 			case 's':
 				s = va_arg(args, char *);
@@ -36,10 +42,11 @@ void print_all(const char * const format, ...)
 					break;
 				}
 				printf("%s", s);
+				p = 1;
 				break;
 		}
-		ptr++;
-		if (*ptr) {
+		id++;
+		if (format[id] != '\0' && p == 1) {
 			printf(", ");
 		}
 	}
