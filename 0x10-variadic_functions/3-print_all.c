@@ -8,26 +8,41 @@
  */
 void print_all(const char * const format, ...)
 {
-	va_list ap;
-	char ft[] = "cifs";
-	char cod[][2] = {"%c", "%d", "%f", "%s"};
-	typeof type_[] = {char, int, float, char *};
-
-	while (*format != '\0')
-	{
-		int i = 0;
-
-		while (ft[i] != '\0')
-		{
-			if (ft[i] == *format)
-			{
-				printf("%s",cod[i], va_arg(ap, type_[i]));
-				break;	
-			}
-			i++;
+	const char *ptr = format;
+	va_list args;
+	char c;
+	int i;
+	float f;
+	char *s;
+	
+	while (*ptr) {
+		switch (*ptr) {
+			case 'c':
+				c = va_arg(args, int);
+				printf("%c", c);
+				break;
+			case 'i':
+				i = va_arg(args, int);
+				printf("%d", i);
+				break;
+			case 'f':
+				f = (float) va_arg(args, double);
+				printf("%f", f);
+				break;
+			case 's':
+				s = va_arg(args, char *);
+				if (s == NULL) {
+					printf("(nil)");
+					break;
+				}
+				printf("%s", s);
+				break;
 		}
-		format++;
+		ptr++;
+		if (*ptr) {
+			printf(", ");
+		}
 	}
 	printf("\n");
-	va_end(ap);
+	va_end(args);
 }
