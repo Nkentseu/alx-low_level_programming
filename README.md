@@ -144,3 +144,10 @@ General
 	* What does a function pointer exactly hold
 	* Where does a function pointer point to in the virtual memory
 
+## [0x10. C - Variadic functions](0x10-variadic_functions "variadic")
+General
+
+	* What are variadic functions
+	* How to use va_start, va_arg and va_end macros
+	* Why and how to use the const type qualifier
+
