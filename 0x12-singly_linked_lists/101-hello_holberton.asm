@@ -1,6 +1,5 @@
 section .data
-    hello db "Hello, World!", 0
-    format db "%s", 10
+    hello db "Hello, World!", 10
 
 section .text
     extern printf
@@ -11,8 +10,7 @@ main:
     push rbp
     mov rbp, rsp
 
-    mov rsi, hello
-    mov rdi, format
+    mov rdi, hello
     xor eax, eax
     call printf
 
