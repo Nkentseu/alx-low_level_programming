@@ -1,19 +1,13 @@
 section .data
-    hello: db "Hello, Holberton", 0
-    format: db "%s\n", 0
+	hello db "Hello, Holberton", 10
 
 section .text
-    global main
+	global main
+	extern printf
 
 main:
-    ; Call printf with the hello string as an argument
-    mov rdi, format
-    mov rsi, hello
-    xor rax, rax
-    call printf
-
-    ; Exit the program with status code 0
-    xor rdi, rdi
-    mov rax, 60 ; Syscall number for exit
-    syscall
-
+	push hello
+	call printf
+	add rsp, 8
+	xor eax, eax
+	ret
