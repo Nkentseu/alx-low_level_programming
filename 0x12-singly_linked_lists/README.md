@@ -39,3 +39,8 @@ Write a function that frees a list_t list.
 
 * Prototype: void free_list(list_t *head);
 
+## [5. The Hare and the Tortoise](100-first.c "first")
+Write a function that prints You're beat! and yet, you must allow,\nI bore my house upon my back!\n before the main function is executed.
+
+* You are allowed to use the printf function
+
