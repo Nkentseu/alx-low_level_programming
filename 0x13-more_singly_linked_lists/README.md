@@ -12,3 +12,8 @@ Write a function that prints all the elements of a listint_t list.
 * Format: see example
 * You are allowed to use printf
 
+## [1. List length](1-listint_len.c "lil")
+Write a function that returns the number of elements in a linked listint_t list.
+
+* Prototype: size_t listint_len(const listint_t *h);
+
