@@ -2,70 +2,63 @@
 #include <stdio.h>
 
 /**
- * lengl - leng of list
- * @head: header of list
- * Return: number of element
+ * get_last - get and disconnecte last node
+ * @h: head of list
+ * Return: the last node or null
  */
-size_t lengl(listint_t *head)
+listint_t *get_last(listint_t **h)
 {
-	return ((head == 0) ? 0 : 1 + lengl(head->next));
+	listint_t *last = 0;
+
+	if (h == 0 || *h == 0)
+		return (0);
+	if((*h)->next == 0)
+	{
+		last = *h;
+		*h = 0;
+	}
+	else if ((*h)->next->next == 0)
+	{
+		last = (*h)->next;
+		(*h)->next = 0;
+	}
+	else
+	{
+		listint_t *t = 0;
+
+		last = *h;
+		while (last->next->next != 0)
+			last = last->next;
+		t = last;
+		last = last->next;
+		t->next = 0;
+	}
+
+	return (last);
 }
 
 /**
- * swapper - swape symetry
- * @head: head of list
- * @size: size of list
- * @idx: index to swap
- * Return: head list
+ * push_last - push in end
+ * @h: head of list
+ * @n: node
+ * Return: void
  */
-listint_t *swapper(listint_t *head, size_t size, size_t idx)
+void push_last(listint_t **h, listint_t* n)
 {
-	listint_t *prevL = 0;
-	listint_t *prevR = 0;
 	listint_t *l = 0;
-	listint_t *r = 0;
-	listint_t *t = 0;
-	size_t i = 1;
 
-	printf("%lu>\n", idx);
-	if (head == 0)
-		return (0);
-	printf(">1\n");
-	if (size == 2)
+	printf("%d::\n", n->n);
+	if (h == 0)
+		return;
+	if (*h == 0)
 	{
-		prevL = head->next;
-		head->next = 0;
-		prevL->next = head;
-		head = prevL;
-		return (head);
+		*h = n;
+		return;
 	}
-	printf(">2\n");
-	prevR = head;
-	while (i++ < size - idx - 1 && prevR != 0)
-		prevR = prevR->next;
-	printf(">3\n");
-	if (idx == 0)
-	{
-		prevL = prevR->next;
-		prevL->next = head->next;
-		head->next = 0;
-		prevR->next = head;
-		head = prevL;
-		return (head);
-	}
-	i = 1;
-	printf(">4\n");
-	while (i++ < idx)
-		prevL = prevL->next;
-	printf(">5\n");
-	l = prevL->next;
-	r = prevR->next;
-	t = l->next;
-	prevL->next = r;
-	prevR->next = l;
-	l->next = r->next;
-	r->next = t;
-	return (head);
+	l = *h;
+	while (l->next != 0)
+		l = l->next;
+	l->next = n;
 }
 
 /**
@@ -75,16 +68,16 @@ listint_t *swapper(listint_t *head, size_t size, size_t idx)
  */
 listint_t *reverse_listint(listint_t **head)
 {
-	size_t leng = 0;
-	size_t i = 0;
+	listint_t *h = 0;
+	listint_t *nh = 0;
 
 	if (head == 0 || *head == 0)
 		return (0);
-	leng = lengl(*head);
-	while (i < leng / 2)
+	h = *head;
+	while (h != 0)
 	{
-		swapper(*head, leng, i);
-		i++;
+		push_last(&nh, get_last(&h));
 	}
-	return (*head);
+	*head = nh;
+	return (nh);
 }
